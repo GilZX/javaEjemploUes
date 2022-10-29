@@ -29,54 +29,49 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblTelefonoEmpleado" max="32767" attributes="0"/>
-                          <Component id="lblSalario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblPuesto" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblTrabajados" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblEdadEmpleado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblApellidoEmpleado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblNombreEmpleado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblCarnetEmpleado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblLiquidacion" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblEmpresaUbicacion" alignment="0" pref="185" max="32767" attributes="0"/>
-                          <Component id="lblTelefonoEmpresa" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblNombreEmpresa" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtEdad" max="32767" attributes="0"/>
-                              <Component id="cbxUbicacion" max="32767" attributes="0"/>
-                              <Component id="cbxNombreEmpresa" alignment="1" pref="150" max="32767" attributes="0"/>
-                              <Component id="txtTelefonoEmpresa" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cbxLiquidacion" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cbxPuesto" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtSalario" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtTelefonoEmpleado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtNombreEmpleado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtApellidoEmpleado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtTrabajados" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="txtCarnet" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblTelefonoEmpleado" max="32767" attributes="0"/>
+                      <Component id="lblSalario" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblPuesto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblTrabajados" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblEdadEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblApellidoEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblNombreEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCarnetEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblLiquidacion" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblEmpresaUbicacion" alignment="0" pref="185" max="32767" attributes="0"/>
+                      <Component id="lblTelefonoEmpresa" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblNombreEmpresa" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btnIngresarDatos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresarDatos" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnEliminar" min="-2" pref="133" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtEdad" max="32767" attributes="0"/>
+                      <Component id="cbxUbicacion" max="32767" attributes="0"/>
+                      <Component id="cbxNombreEmpresa" alignment="1" pref="150" max="32767" attributes="0"/>
+                      <Component id="txtTelefonoEmpresa" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cbxLiquidacion" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cbxPuesto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtSalario" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtTelefonoEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtNombreEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtApellidoEmpleado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtTrabajados" alignment="0" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="txtCarnet" min="-2" pref="150" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                       <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
                       <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       <Component id="spLiquidaciones" min="-2" pref="686" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -93,7 +88,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="lblLiquidaciones" pref="51" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -162,14 +157,14 @@
                   <Component id="lblTelefonoEmpleado" alignment="3" max="32767" attributes="0"/>
                   <Component id="txtTelefonoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresarDatos" alignment="3" max="32767" attributes="0"/>
-                  <Component id="btnEliminar" alignment="3" max="32767" attributes="0"/>
                   <Component id="btnSalir" alignment="3" max="32767" attributes="0"/>
                   <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEliminar" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -576,14 +571,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnIngresarDatos">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Liquidaciones/add.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingresar Datos"/>
       </Properties>
@@ -594,14 +589,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEliminar">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Liquidaciones/eliminarico.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
@@ -612,14 +607,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSalir">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Liquidaciones/salir.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
@@ -640,14 +635,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Liquidaciones/save.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Guardar informacion al txt"/>
       </Properties>
