@@ -187,6 +187,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         });
 
         txtEdad.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEdadActionPerformed(evt);
+            }
+        });
         txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 KeyTypedEdad(evt);
@@ -271,6 +276,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         spLiquidaciones.setViewportView(tbLiquidaciones);
 
         txtNombreEmpleado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtNombreEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreEmpleadoActionPerformed(evt);
+            }
+        });
         txtNombreEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 KeyTypedNombreEmpleado(evt);
@@ -545,12 +555,19 @@ public class frmLiquidaciones extends javax.swing.JFrame {
     private void KeyTypedNombreEmpleado(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedNombreEmpleado
 
         // Condicion que nos permite ingresar solo letras, entrada
-        valida = evt.getKeyChar();
+        /* valida = evt.getKeyChar();
 
         if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar letras");
+        }/*
+        
+        
+         */
+        if (txtCarnet.getText().length() >= 1 && txtCarnet.getText().length() <= 4) {
+            evt.consume();
         }
+
 
     }//GEN-LAST:event_KeyTypedNombreEmpleado
 
@@ -618,12 +635,25 @@ public class frmLiquidaciones extends javax.swing.JFrame {
     private void KeyTypedTelefonoEmpleado(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedTelefonoEmpleado
 
         // Condicion que nos permite ingresar solo numeros, entrada
-        valida = evt.getKeyChar();
+        /* valida = evt.getKeyChar();
 
         if ((valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros");
+        }*/
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (!numeros) {
+            evt.consume();
         }
+        
+         if(txtTelefonoEmpleado.getText().length() == 8)
+    {
+        evt.consume();
+    }
+
 
     }//GEN-LAST:event_KeyTypedTelefonoEmpleado
 
@@ -874,10 +904,19 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             if (txtTelefonoEmpleado.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Telefono del Empleado Vacio",
                         "Error!", JOptionPane.ERROR_MESSAGE);
+
+                       
             } else {
+                
+                 if(txtTelefonoEmpleado.getText().length()!=8){
+                            JOptionPane.showMessageDialog(this, "No dejar el campo Telefono del Empleado Vacio",
+                        "Error!", JOptionPane.ERROR_MESSAGE);
+                        }else{
+                     emple.setTelefono(Integer.parseInt(txtTelefonoEmpleado.getText()));
+                     empre.setRolTrabajo(cbxPuesto.getSelectedItem().toString());
+                 }
                 //Combiertiendo de Int a String
-                emple.setTelefono(Integer.parseInt(txtTelefonoEmpleado.getText()));
-                empre.setRolTrabajo(cbxPuesto.getSelectedItem().toString());
+                
             }
 
             //Agregar los datos de usuario a la tabla, salida
@@ -1069,7 +1108,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
                         bw.write(registros.get(contador));
                         bw.write("\n\n");
                     }
-                 
+
                     if (contador == 11) {
                         bw.write("TelefonoEmpleado: ");
                         bw.write(registros.get(contador));
@@ -1132,6 +1171,14 @@ public class frmLiquidaciones extends javax.swing.JFrame {
          */
 
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txtNombreEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreEmpleadoActionPerformed
+
+    private void txtEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdadActionPerformed
 
     public static void main(String args[]) {
 
