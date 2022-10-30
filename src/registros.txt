@@ -1,0 +1,34 @@
+Registros De Liquidaciones 2022
+Registros:
+
+Nombre:Claro
+
+Teléfono 72135544
+
+Ubicación SanSalvador
+
+Tipo:Renuncia
+
+Carnet:548700
+
+Empleado:Madeline
+
+ApellidoNORECUERDOXD
+
+Edad:22
+
+Años Laborados 
+10.0
+
+Salario:Gerente
+
+TelefonoEmpleado:72398240
+
+Liquidacion:$4000.0
+
+Iva:$520.0
+
+bono$3480.0
+
+Entregado$3480.0
+

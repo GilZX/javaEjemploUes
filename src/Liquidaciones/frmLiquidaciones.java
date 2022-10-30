@@ -1,4 +1,4 @@
-    /*
+/*
     Descripción de la aplicación
     La problemática que se ha planteado es: Aplicación para el cálculo de liquidaciones laborales de una empresa privada, como 
     anteriormente se ha descrito normalmente cuando hay un despido o una liquidación se debe dar 15 días del salario base; en el
@@ -15,8 +15,7 @@
     que asciende a 15 días de salario normal por cada año de servicio prestado a la empresa.
     Este beneficio se otorga igualmente a los empleados cuando renuncian, y el empleador está obligado a proporcionar el pago 
     dentro de los 15 días siguientes al último día de trabajo del empleado.
-    */
-
+ */
 package Liquidaciones;
 
 /*
@@ -35,57 +34,56 @@ package Liquidaciones;
     *Creadores: Aguilar Vasquez, Rodrigo Ómar. (AV20023)
                 Aquino Escobar, Oscar René. (AE18021)
                 Reyes Rojas, Madeline Elizabeth. (RR20104)
-     */
-
+ */
 //Importando galerias, salida
-    import java.util.ArrayList;
-    import java.io.File;
-    import java.io.FileWriter;
-    import java.io.FileReader;
-    import java.util.List;
-    import java.awt.event.KeyEvent;
-    import java.awt.HeadlessException;
+import java.util.ArrayList;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.util.List;
+import java.awt.event.KeyEvent;
+import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-    import java.io.IOException;
-    import javax.swing.JOptionPane;
-    import javax.swing.table.DefaultTableModel;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class frmLiquidaciones extends javax.swing.JFrame {
 
+    List<String> registros = new ArrayList();
+
     Empresa empre = new Empresa();
 //empre = instancia de Empresa, entrada
-    
+
     Empleado emple = new Empleado();
 //emple = instancia de Empleado, entrada
-    
+
 //Metodo de la tabla, entrada
     DefaultTableModel empres = new DefaultTableModel();
 //empres = modelo de control de Empresa
-    
+
 //Creando el array list Empleado, entrada
-   public List<Empresa> empresas = new ArrayList<>();
+    public List<Empresa> empresas = new ArrayList<>();
 //empresas = arraylist de Empresa
-    
+
 //Atributos, salida
     int salir, elige, filaBorrada, confirmar;
     String opcion, carnet;
     char valida;
-    
+
     private final String ruta = System.getProperties().getProperty("user.di");
+
     public frmLiquidaciones() {
         initComponents();
         File archivo = null;
         FileReader FileR = null;
         BufferedReader BufferedR = null;
-        
 
         //Agregar nombre del documento
-        archivo = new File (ruta + "//ProyectoEsd115.txt");
+        archivo = new File(ruta + "//ProyectoEsd115.txt");
         //FileR = new FileReader(archivo);
-        
 
-        
 //        empres = (DefaultTableModel)this.tbLiquidaciones.getModel();
     }
 
@@ -93,6 +91,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         lblLiquidaciones = new javax.swing.JLabel();
         lblTelefonoEmpresa = new javax.swing.JLabel();
         lblLiquidacion = new javax.swing.JLabel();
@@ -124,10 +123,21 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         txtTrabajados = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
+        setMaximumSize(new java.awt.Dimension(400, 500));
 
         lblLiquidaciones.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         lblLiquidaciones.setText("Liquidaciones");
@@ -357,7 +367,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
                         .addComponent(lblTelefonoEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblNombreEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(btnIngresarDatos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -378,13 +388,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
                         .addGap(119, 119, 119)
                         .addComponent(btnSalir)
                         .addGap(174, 174, 174)
-                        .addComponent(btnGuardar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(spLiquidaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addComponent(btnGuardar)
+                        .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spLiquidaciones))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(475, 475, 475)
                 .addComponent(lblLiquidaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -394,11 +402,10 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblLiquidaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addComponent(lblLiquidaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbxNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -441,13 +448,15 @@ public class frmLiquidaciones extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblSalario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(spLiquidaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTelefonoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
+                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTelefonoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(3, 3, 3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(spLiquidaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -481,7 +490,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //            txtTelefonoEmpresa.setText("70400393");
 //            break;
 //        }
-        
+
     }//GEN-LAST:event_KeyTypedNombreEmpresa
 
     private void KeyTypedTelefonoEmpresa(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedTelefonoEmpresa
@@ -489,25 +498,23 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo numeros, entrada
         valida = evt.getKeyChar();
 
-        if((valida< '0' || valida> '9') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros");
         }
-        
+
     }//GEN-LAST:event_KeyTypedTelefonoEmpresa
 
     private void KeyTypedUbicacion(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedUbicacion
 
-       // Condicion que nos permite ingresar solo letras, entrada
+        // Condicion que nos permite ingresar solo letras, entrada
         valida = evt.getKeyChar();
 
-        if((valida< 'A' || valida> 'Z') && (valida< 'a' || valida> 'z') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar letras");
         }
-        
+
     }//GEN-LAST:event_KeyTypedUbicacion
 
     private void KeyTypedLiquidacion(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedLiquidacion
@@ -515,26 +522,24 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo letras, entrada
         valida = evt.getKeyChar();
 
-        if((valida< 'A' || valida> 'Z') && (valida< 'a' || valida> 'z') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar letras");
         }
-        
+
     }//GEN-LAST:event_KeyTypedLiquidacion
 
     private void KeyTypedCarnet(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedCarnet
 
-       // Condicion que nos permite ingresar solo numeros y letras, entrada
+        // Condicion que nos permite ingresar solo numeros y letras, entrada
         valida = evt.getKeyChar();
 
-        if((valida< 'A' || valida> 'Z') && (valida< 'a' || valida> 'z') && 
-           (valida< '0' || valida> '9') &&(valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z')
+                && (valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros y letras");
-        } 
-        
+        }
+
     }//GEN-LAST:event_KeyTypedCarnet
 
     private void KeyTypedNombreEmpleado(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedNombreEmpleado
@@ -542,12 +547,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo letras, entrada
         valida = evt.getKeyChar();
 
-        if((valida< 'A' || valida> 'Z') && (valida< 'a' || valida> 'z') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar letras");
         }
-        
+
     }//GEN-LAST:event_KeyTypedNombreEmpleado
 
     private void KeyTypedApellidoEmpleado(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedApellidoEmpleado
@@ -555,12 +559,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo letras, entrada
         valida = evt.getKeyChar();
 
-        if((valida< 'A' || valida> 'Z') && (valida< 'a' || valida> 'z') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < 'A' || valida > 'Z') && (valida < 'a' || valida > 'z') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar letras");
         }
-        
+
     }//GEN-LAST:event_KeyTypedApellidoEmpleado
 
     private void KeyTypedEdad(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedEdad
@@ -568,12 +571,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo numeros, entrada
         valida = evt.getKeyChar();
 
-        if((valida< '0' || valida> '9') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros");
         }
-        
+
     }//GEN-LAST:event_KeyTypedEdad
 
     private void KeyTypedPuesto(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedPuesto
@@ -598,7 +600,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //            txtSalario.setText("400");
 //            break;
 //        }
-        
+
     }//GEN-LAST:event_KeyTypedPuesto
 
     private void KeyTypedSalario(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedSalario
@@ -606,12 +608,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo numeros, entrada
         valida = evt.getKeyChar();
 
-        if((valida< '0' || valida> '9') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros");
         }
-        
+
     }//GEN-LAST:event_KeyTypedSalario
 
     private void KeyTypedTelefonoEmpleado(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedTelefonoEmpleado
@@ -619,12 +620,11 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         // Condicion que nos permite ingresar solo numeros, entrada
         valida = evt.getKeyChar();
 
-        if((valida< '0' || valida> '9') && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+        if ((valida < '0' || valida > '9') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros");
         }
-        
+
     }//GEN-LAST:event_KeyTypedTelefonoEmpleado
 
     private void KeyTypedIngresarDatos(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedIngresarDatos
@@ -712,9 +712,9 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //        
 //            //Agregando al array list Liquidacion, salida
 //            empresas.add(empre);
-        
+
     }//GEN-LAST:event_KeyTypedIngresarDatos
-    
+
     private void KeyTypedEliminar(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedEliminar
 
 //        //Aplicamos codigo para limpiar la tabla, salida
@@ -740,7 +740,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //                JOptionPane.showMessageDialog(null,"Registro eliminado" );
 //            }
 //        }
-        
+
     }//GEN-LAST:event_KeyTypedEliminar
 
     private void KeyTypedSalir(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyTypedSalir
@@ -751,32 +751,32 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //        if(elige == 0){
 //            System.exit(0);
 //        }
-        
+
     }//GEN-LAST:event_KeyTypedSalir
 
     private void cbxNombreEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNombreEmpresaActionPerformed
-        
+
         //Nombre de la empresa asigna un telefono cuando elige, salida
         opcion = (String) cbxNombreEmpresa.getSelectedItem();
         switch (opcion) {
             case "Claro":
-            double Claro = 72135544;
-            txtTelefonoEmpresa.setText("72135544");
-            break;
+                double Claro = 72135544;
+                txtTelefonoEmpresa.setText("72135544");
+                break;
             case "Tigo":
-            double Tigo = 79138045;
-            txtTelefonoEmpresa.setText("79138045");
-            break;
+                double Tigo = 79138045;
+                txtTelefonoEmpresa.setText("79138045");
+                break;
             case "Digicel":
-            double Digicel = 79138013;
-            txtTelefonoEmpresa.setText("79138013");
-            break;
+                double Digicel = 79138013;
+                txtTelefonoEmpresa.setText("79138013");
+                break;
             default:
-            double Movistar = 70400393;
-            txtTelefonoEmpresa.setText("70400393");
-            break;
+                double Movistar = 70400393;
+                txtTelefonoEmpresa.setText("70400393");
+                break;
         }
-        
+
     }//GEN-LAST:event_cbxNombreEmpresaActionPerformed
 
     private void cbxPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPuestoActionPerformed
@@ -785,23 +785,23 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         opcion = (String) cbxPuesto.getSelectedItem();
         switch (opcion) {
             case "Gerente":
-            double Gerente = 800;
-            txtSalario.setText("800");
-            break;
+                double Gerente = 800;
+                txtSalario.setText("800");
+                break;
             case "Seguridad":
-            double Seguridad = 600;
-            txtSalario.setText("600");
-            break;
+                double Seguridad = 600;
+                txtSalario.setText("600");
+                break;
             case "Recepcionista":
-            double Recepcionista = 500;
-            txtSalario.setText("500");
-            break;
+                double Recepcionista = 500;
+                txtSalario.setText("500");
+                break;
             default:
-            double Ordenanza = 400;
-            txtSalario.setText("400");
-            break;
+                double Ordenanza = 400;
+                txtSalario.setText("400");
+                break;
         }
-        
+
     }//GEN-LAST:event_cbxPuestoActionPerformed
 
     private void btnIngresarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarDatosActionPerformed
@@ -810,9 +810,9 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             //Validar no dejar vacio en el telefono de la empresa y el nombre de la empresa, entrada
             if (txtTelefonoEmpresa.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo telefono de la empresa  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
-            //Combiertiendo de Int a String
+                //Combiertiendo de Int a String
                 empre.setTelefonoEmpresa(Integer.parseInt(txtTelefonoEmpresa.getText()));
                 empre.setNombreEmpresa(cbxNombreEmpresa.getSelectedItem().toString());
             }
@@ -820,7 +820,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             //Validar no dejar vacio en carnet del empleado y la ubicacion, entrada
             if (txtCarnet.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Carnet  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
                 emple.setCarnet(txtCarnet.getText());
                 empre.setUbicacion(cbxUbicacion.getSelectedItem().toString());
@@ -829,7 +829,7 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             //Validar no dejar vacio Nombre Empleado y tipo de liquidacion, entrada
             if (txtNombreEmpleado.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Nombre Empleado  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
                 emple.setNombre(txtNombreEmpleado.getText());
                 empre.setTipoLiquidacion(cbxLiquidacion.getSelectedItem().toString());
@@ -838,132 +838,135 @@ public class frmLiquidaciones extends javax.swing.JFrame {
             //Validar no dejar vacio Apellido Empleado, entrada
             if (txtApellidoEmpleado.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Apellido Empleado  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
                 emple.setApellido(txtApellidoEmpleado.getText());
             }
-            
+
             //Validar no dejar vacio en edad del empleado, entrada
             if (txtEdad.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Edad  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
-            //Combiertiendo de Int a String
+                //Combiertiendo de Int a String
                 emple.setEdad(Integer.parseInt(txtEdad.getText()));
             }
-            
+
             //Validar no dejar vacio los años trabajados del empleado, entrada
             if (txtTrabajados.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo años trabajados  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
-            //Combiertiendo de Double a String   
-               empre.setAniosEmpresa(Double.parseDouble(txtTrabajados.getText()));
+                //Combiertiendo de Double a String   
+                empre.setAniosEmpresa(Double.parseDouble(txtTrabajados.getText()));
             }
-            
+
             //Validar no dejar vacio Salario Empleado, entrada
             if (txtSalario.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Salario del Empleado  Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
-            //Combiertiendo de Double a String   
+                //Combiertiendo de Double a String   
                 empre.setSalario(Double.parseDouble(txtSalario.getText()));
             }
-            
+
             //Validar no dejar vacio en telefono del empleado, salario y puesto, entrada
             if (txtTelefonoEmpleado.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No dejar el campo Telefono del Empleado Vacio",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             } else {
-            //Combiertiendo de Int a String
-                emple.setTelefono(Integer.parseInt(txtTelefonoEmpleado.getText())); 
+                //Combiertiendo de Int a String
+                emple.setTelefono(Integer.parseInt(txtTelefonoEmpleado.getText()));
                 empre.setRolTrabajo(cbxPuesto.getSelectedItem().toString());
             }
-            
+
             //Agregar los datos de usuario a la tabla, salida
             agregarRegistroTabla(empre, emple);
 
             //Limpiando los cuadros de texto y los combo box
-            } catch (HeadlessException e) {
-            }
-            txtTelefonoEmpresa.setText(null);
-            txtCarnet.setText(null);
-            txtNombreEmpleado.setText(null);
-            txtApellidoEmpleado.setText(null);
-            txtEdad.setText(null);
-            txtTrabajados.setText(null);
-            txtSalario.setText(null);
-            txtTelefonoEmpleado.setText(null);
-        
-            //Agregando al array list Liquidacion, salida
-            empresas.add(empre);
-        
+        } catch (HeadlessException e) {
+        }
+        txtTelefonoEmpresa.setText(null);
+        txtCarnet.setText(null);
+        txtNombreEmpleado.setText(null);
+        txtApellidoEmpleado.setText(null);
+        txtEdad.setText(null);
+        txtTrabajados.setText(null);
+        txtSalario.setText(null);
+        txtTelefonoEmpleado.setText(null);
+
+        //Agregando al array list Liquidacion, salida
+        empresas.add(empre);
+
     }//GEN-LAST:event_btnIngresarDatosActionPerformed
 
-     //Metodo agregar registro a la tabla, salida
-            private void  agregarRegistroTabla(Empresa empresa, Empleado empleado){
-            try {
-                
+    //Metodo agregar registro a la tabla, salida
+    private void agregarRegistroTabla(Empresa empresa, Empleado empleado) {
+        try {
+
             //Se obtiene el modelo del control tabla del formulario
-                empres = (DefaultTableModel) tbLiquidaciones.getModel();
-                tbLiquidaciones.setModel(empres);
-                
+            empres = (DefaultTableModel) tbLiquidaciones.getModel();
+            tbLiquidaciones.setModel(empres);
+
             //se debe hace un objeto con el numero de columnas de la tabla
-                Object[] columna = new Object[16];
-                
+            Object[] columna = new Object[16];
+
             //Se debe llenar cada datos de las columnas de la tabla, salida
-                columna[0]= empresa.getNombreEmpresa();
-                columna[1]= empresa.getTelefonoEmpresa();
-                columna[2]= empresa.getUbicacion();
-                columna[3]= empresa.getTipoLiquidacion();
-                columna[4]= empleado.getCarnet();
-                columna[5]= empleado.getNombre();
-                columna[6]= empleado.getApellido();
-                columna[7]= empleado.getEdad();
-                columna[8]= empresa.getAniosEmpresa();
-                columna[9]= empresa.getRolTrabajo();
-                columna[10]= empresa.getSalario();
-                columna[11]= empleado.getTelefono();
-                columna[12]= "$" + empresa.CalcularLiquidacion(empresa.getAniosEmpresa(), empresa.getSalario(), 
-                          empresa.getLiquidacion());
-                columna[13]= "$" + empresa.CalcularIva(empresa.getLiquidacionCalculada(), empresa.getIva());
-                columna[14]= "$" + empresa.CalcularPago(empresa.getLiquidacionCalculada(), empresa.getIvaCalculado());
-                columna[15]= "$" + empresa.CalcularBonos(empresa.getPago());
+            columna[0] = empresa.getNombreEmpresa();
+            columna[1] = empresa.getTelefonoEmpresa();
+            columna[2] = empresa.getUbicacion();
+            columna[3] = empresa.getTipoLiquidacion();
+            columna[4] = empleado.getCarnet();
+            columna[5] = empleado.getNombre();
+            columna[6] = empleado.getApellido();
+            columna[7] = empleado.getEdad();
+            columna[8] = empresa.getAniosEmpresa();
+            columna[9] = empresa.getRolTrabajo();
+            columna[10] = empresa.getSalario();
+            columna[11] = empleado.getTelefono();
+            columna[12] = "$" + empresa.CalcularLiquidacion(empresa.getAniosEmpresa(), empresa.getSalario(),
+                    empresa.getLiquidacion());
+            columna[13] = "$" + empresa.CalcularIva(empresa.getLiquidacionCalculada(), empresa.getIva());
+            columna[14] = "$" + empresa.CalcularPago(empresa.getLiquidacionCalculada(), empresa.getIvaCalculado());
+            columna[15] = "$" + empresa.CalcularBonos(empresa.getPago());
+
+            for (int i = 0; i < 16; i++) {
+                registros.add(columna[i].toString());
+            }
 
             empres.addRow(columna);
- 
-        JOptionPane.showMessageDialog(null, "Datos Ingresados");
-        }catch(HeadlessException e) {
-        JOptionPane.showMessageDialog(null, "Error");
-    }
+
+            JOptionPane.showMessageDialog(null, "Datos Ingresados");
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, "Error");
         }
-    
+    }
+
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
 
-         //Aplicamos codigo para limpiar la tabla, salida
-
+        //Aplicamos codigo para limpiar la tabla, salida
         //Sección 0
         filaBorrada = tbLiquidaciones.getSelectedRow();
 
         //Sección 1
-        if (filaBorrada<0){
-            JOptionPane.showMessageDialog(null,"Debe seleccionar una fila de la tabla");
-        }else {
+        if (filaBorrada < 0) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fila de la tabla");
+        } else {
 
             //Sección 2
-            confirmar = JOptionPane.showConfirmDialog(null,"Esta seguro que desea ¿Eliminar el registro?");
+            confirmar = JOptionPane.showConfirmDialog(null, "Esta seguro que desea ¿Eliminar el registro?");
 
             //Sección 3
-            if(JOptionPane.OK_OPTION == confirmar){
+            if (JOptionPane.OK_OPTION == confirmar) {
 
                 //Sección 4
                 empres.removeRow(filaBorrada);
 
                 //Sección 5
-                JOptionPane.showMessageDialog(null,"Registro eliminado" );
+                JOptionPane.showMessageDialog(null, "Registro eliminado");
             }
         }
-        
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -971,23 +974,22 @@ public class frmLiquidaciones extends javax.swing.JFrame {
         //Para salir del sistema, salida
         salir = JOptionPane.YES_NO_OPTION;
         elige = JOptionPane.showConfirmDialog(this, "¿Desea salir?", "Salir", salir);
-        if(elige == 0){
+        if (elige == 0) {
             System.exit(0);
         }
-        
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtTrabajadosKeyTypedEdad(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrabajadosKeyTypedEdad
 
         // Condicion que nos permite ingresar solo numeros, entrada
         valida = evt.getKeyChar();
-        
-        if((valida< '0' || valida> '9') && (valida< '.')  && (valida !=(char)KeyEvent.VK_BACK_SPACE))
-        {
+
+        if ((valida < '0' || valida > '9') && (valida < '.') && (valida != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se permite ingresar numeros: " + valida);
         }
-        
+
     }//GEN-LAST:event_txtTrabajadosKeyTypedEdad
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -999,9 +1001,115 @@ public class frmLiquidaciones extends javax.swing.JFrame {
 //        JOptionPane.showMessageDialog(null, "Datos guardados");
 //        }catch(HeadlessException | IOException e) {
 //        JOptionPane.showMessageDialog(null, "Error");
+        int contador = 0;
+        try {
+            String ruta = "./src/registros.txt";
+            File file = new File(ruta);
+            // Si el archivo no existe es creado
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Registros De Liquidaciones 2022");
+            bw.write("\n");
+            bw.write("Registros:");
+            bw.write("\n");
+            bw.write("\n");
+
+            for (int i = 0; i < registros.size(); i++) {
+                for (int x = 0; x < registros.size(); x++) {
+                    if (contador == 0) {
+                        bw.write("Nombre: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 1) {
+                        bw.write("Teléfono: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 2) {
+                        bw.write("Ubicación: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 3) {
+                        bw.write("Tipo: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 4) {
+                        bw.write("Carnet: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 5) {
+                        bw.write("Empleado: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 6) {
+                        bw.write("Apellido: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 7) {
+                        bw.write("Edad:");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 8) {
+                        bw.write("Años Laborados: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 9) {
+                        bw.write("Salario: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                 
+                    if (contador == 11) {
+                        bw.write("TelefonoEmpleado: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 12) {
+                        bw.write("Liquidacion: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 13) {
+                        bw.write("Iva: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 14) {
+                        bw.write("bono: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+                    if (contador == 15) {
+                        bw.write("Entregado: ");
+                        bw.write(registros.get(contador));
+                        bw.write("\n\n");
+                    }
+
+                    contador++;
+
+                }
+
+            }
+
+            bw.close();
+            JOptionPane.showMessageDialog(null, "Registros Guardados Exitosamente");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 //    }
-        
-try {
+        /*try {
             String proyecto = "C:\\Users\\Racso\\Desktop\\ProyectoESD115v5\\src";
     try (BufferedWriter prueba = new BufferedWriter(new FileWriter(proyecto ))) {
         for (int i = 0; i < tbLiquidaciones.getRowCount(); i++) //realiza un barrido por filas.
@@ -1021,10 +1129,10 @@ try {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "ERROR: Ocurrio un problema al salvar el archivo");
         }
-    
+         */
 
     }//GEN-LAST:event_btnGuardarActionPerformed
-    
+
     public static void main(String args[]) {
 
         try {
@@ -1052,7 +1160,7 @@ try {
     private javax.swing.JComboBox<String> cbxNombreEmpresa;
     private javax.swing.JComboBox<String> cbxPuesto;
     private javax.swing.JComboBox<String> cbxUbicacion;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLabel lblApellidoEmpleado;
     private javax.swing.JLabel lblCarnetEmpleado;
     private javax.swing.JLabel lblEdadEmpleado;
